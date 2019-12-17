@@ -1,0 +1,15 @@
+name: Get Issues
+
+on: [push]
+
+jobs:
+  create-event:
+    runs-on: ubuntu-latest
+    name: Get P1 issues
+    steps:
+    - name: Get events from action
+      uses: ./
+      with:
+        githubToken: ${{ secrets.GITHUB_TOKEN }}
+        filterLabel: bug
+        filterState: open
