@@ -24,7 +24,7 @@ async function run() {
         const octokit = new github.GitHub(githubToken);
 
         // Set the repo Url
-        const repoUrl = `https://github.com/${github.context.repo.repo}`;
+        const repoUrl = `https://github.com/${github.context.repo.owner}/${github.context.repo.repo}`;
 
         // GitHub URL which shows the filtered issues
         const filteredIssuesUrl = `${repoUrl}/issues?q=is:issue is:${filterState} label:${filterLabel}`;
@@ -56,7 +56,7 @@ async function run() {
                 title: issue.title,
                 body: issue.body.substring(0, 100) + "...",
                 url: issue.html_url,
-                assignedTo: issue.assignee ? issue.assignee.login : "Not assigned",
+                assignedTo: issue.assignee ? issue.assignee.login : "None",
                 assignedToPic: issue.assignee? issue.assignee.avatar_url : "https://techcrunch.com/wp-content/uploads/2010/07/github-logo.png" 
             })
         }
