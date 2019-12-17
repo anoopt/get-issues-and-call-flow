@@ -1,1 +1,1 @@
-# GitHub Action to get issues with specified label
+# GitHub Action to get issues and then call Micorsoft Flow
