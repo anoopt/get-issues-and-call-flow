@@ -14,9 +14,9 @@ inputs:
   filterState:
     description: "The state of the issues."
     required: true
-  outputs:
-    requiredIssues:
-      description: "The list of required issues."
+  flowUrl:
+    description: "The URL of the HTTP triggered flow."
+    required: true
 runs:
   using: "node12"
   main: "lib/main.js"
