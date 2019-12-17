@@ -15,7 +15,6 @@
   },
   "dependencies": {
     "@actions/core": "^1.2.0",
-    "@actions/github": "^2.0.0",
-    "date-fns": "^2.8.1"
+    "@actions/github": "^2.0.0"
   }
 }

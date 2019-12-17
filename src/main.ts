@@ -7,17 +7,13 @@ async function run() {
     try {
 
         // Set the context
-        const context: Context = github.context;
+        const context = github.context;
 
         // Get the GitHub token
         const githubToken = core.getInput('githubToken');
 
         // get octokit client
         const octokit = new github.GitHub(githubToken);
-
-        // Set the repo url
-        const repoUrl: string = `https://github.com/${github.context.repo}`;
-
 
         // Variable to hold the issues that are required
         let requiredIssues = []
