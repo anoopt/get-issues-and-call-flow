@@ -19,4 +19,4 @@ inputs:
       description: "The list of required issues."
 runs:
   using: "node12"
-  main: "dist/index.js"
+  main: "lib/main.js"
