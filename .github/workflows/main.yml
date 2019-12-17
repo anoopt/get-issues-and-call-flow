@@ -1,0 +1,18 @@
+name: Get Issues
+
+on: [push]
+
+jobs:
+  create-event:
+    runs-on: ubuntu-latest
+    name: Get P1 issues
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v1
+    - name: Get events from action
+      uses: ./
+      with:
+        githubToken: ${{ secrets.GITHUB_TOKEN }}
+        filterLabel: bug
+        filterState: open
+        flowUrl: https://prod-16.uksouth.logic.azure.com:443/workflows/014e0cfac85c45d0b335e460b07e9955/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=Bi6uP5Kri5T0xCA3mFqU9sEEShC5dBPvTUV-Cvs65uM
