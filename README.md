@@ -1,0 +1,1 @@
+# GitHub Action to get issues with specified label
