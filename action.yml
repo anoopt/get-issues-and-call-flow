@@ -14,6 +14,9 @@ inputs:
   filterState:
     description: "The state of the issues."
     required: true
+  outputs:
+    requiredIssues:
+      description: "The list of required issues."
 runs:
   using: "node12"
   main: "dist/index.js"
