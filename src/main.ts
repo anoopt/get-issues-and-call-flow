@@ -45,6 +45,8 @@ async function run() {
             labels: filterLabel
         })
 
+        console.log("Getting issues...");
+
         // Get the issues based on options
         const issues = await octokit.paginate(opts)
 
@@ -54,11 +56,13 @@ async function run() {
                 title: issue.title,
                 body: issue.body.substring(0, 100) + "...",
                 url: issue.html_url,
-                assignedTo: issue.assignee.login,
-                assignedToPic: issue.assignee.avatar_url
+                assignedTo: issue.assignee ? issue.assignee.login : "Not assigned",
+                assignedToPic: issue.assignee? issue.assignee.avatar_url : "https://techcrunch.com/wp-content/uploads/2010/07/github-logo.png" 
             })
         }
 
+        // Log the issues
+        console.log("Required issues are:")
         console.log(requiredIssues);
 
         // Create the notification text that the user will see in their mobile
@@ -66,6 +70,8 @@ async function run() {
 
         // Build the object to send to the Flow
         issuesObjToSend = { githubUrl: filteredIssuesUrl, issues: requiredIssues, subject: subject, notificationText: notificationText }
+
+        console.log("Send a request to the Flow...");
 
         // Call the Flow
         await fetch(flowUrl, {
