@@ -598,7 +598,7 @@ function run() {
                     body: issue.body.substring(0, 100) + "...",
                     url: issue.html_url,
                     assignedTo: issue.assignee ? issue.assignee.login : "None",
-                    assignedToPic: issue.assignee ? issue.assignee.avatar_url : "https://github.com/anoopt/get-issues-and-call-flow/raw/master/images/Action.png"
+                    assignedToPic: issue.assignee ? issue.assignee.avatar_url : "https://github.com/anoopt/get-issues-and-call-flow/raw/master/images/github.png"
                 });
             }
             // Log the issues
