@@ -57,7 +57,7 @@ async function run() {
                 body: issue.body.substring(0, 100) + "...",
                 url: issue.html_url,
                 assignedTo: issue.assignee ? issue.assignee.login : "None",
-                assignedToPic: issue.assignee? issue.assignee.avatar_url : "https://techcrunch.com/wp-content/uploads/2010/07/github-logo.png" 
+                assignedToPic: issue.assignee? issue.assignee.avatar_url : "https://github.com/anoopt/get-issues-and-call-flow/raw/master/images/Action.png" 
             })
         }
 
