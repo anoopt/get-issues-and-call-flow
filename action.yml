@@ -6,7 +6,7 @@ branding:
   color: "yellow"
 inputs:
   githubToken:
-    description: "The the GitHub Secret Token."
+    description: "The GitHub Secret Token."
     required: true
   filterLabel:
     description: "The label with which the issues are tagged."

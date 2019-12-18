@@ -3,13 +3,13 @@ name: Get Issues
 on: [push]
 
 jobs:
-  create-event:
+  Get-Issues:
     runs-on: ubuntu-latest
-    name: Get P1 issues
+    name: Get issues
     steps:
     - name: Checkout
       uses: actions/checkout@v1
-    - name: Get events from action
+    - name: Get issues using action
       uses: ./
       with:
         githubToken: ${{ secrets.GITHUB_TOKEN }}
